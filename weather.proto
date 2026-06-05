@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package weather;
+
+service WeatherService {
+  rpc GetWeatherStats (WeatherRequest) returns (WeatherResponse) {}
+}
+
+message WeatherRequest {
+  repeated float temperatures = 1;
+}
+
+message WeatherResponse {
+  float average = 1;
+  float min = 2;
+  float max = 3;
+}
